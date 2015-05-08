@@ -341,7 +341,7 @@ exports.default = (function() {
     { name: "type", type: Const(TYPE_INDICATOR), value: "Setter" },
     { name: "loc", type: Maybe(SourceSpan) },
     { name: "name", type: PropertyName },
-    { name: "param", type: Union(ObjectBinding, ArrayBinding, BindingIdentifier, MemberExpression) },
+    { name: "param", type: Union(ObjectBinding, ArrayBinding, BindingIdentifier, MemberExpression, BindingWithDefault) },
     { name: "body", type: FunctionBody },
   ];
 

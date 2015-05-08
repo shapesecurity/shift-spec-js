@@ -16,7 +16,7 @@
 
 var parse = require("./webidl-parser").parse;
 
-var specSource = require('fs').readFileSync(__dirname + '/../node_modules/shift-spec/spec.idl', 'utf-8');
+var specSource = require('fs').readFileSync(__dirname + '/../node_modules/shift-spec-idl/spec.idl', 'utf-8');
 
 var declarations = parse(specSource);
 
