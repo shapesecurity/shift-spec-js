@@ -1,6 +1,6 @@
 {
   "name": "shift-spec",
-  "version": "2015.1.2",
+  "version": "2015.1.3",
   "description": "JavaScript representation of the Shift AST specification",
   "author": "Shape Security Labs",
   "homepage": "https://github.com/shapesecurity/shift-spec-js",
