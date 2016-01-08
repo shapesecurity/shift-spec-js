@@ -16,6 +16,11 @@
  * limitations under the License.
  */
 
+// Hack to make Babel6 import this as a module.
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 // Meta data generated from spec.idl.
 exports.default = (function() {
   var SPEC = {};

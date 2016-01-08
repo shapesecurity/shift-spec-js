@@ -176,6 +176,11 @@ var content = "\
  * limitations under the License.\n\
  */\n\
 \n\
+// Hack to make Babel6 import this as a module.\n\
+Object.defineProperty(exports, \"__esModule\", {\n\
+  value: true\n\
+});\n\
+\n\
 // Meta data generated from spec.idl.\n\
 exports.default = (function() {\n\
   var SPEC = {};\n\
