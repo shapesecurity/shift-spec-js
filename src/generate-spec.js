@@ -274,4 +274,8 @@ declarations.forEach(function (declaration) {
 content += "  return SPEC;\n";
 content += "}());\n";
 
-require("fs").writeFileSync(__dirname + "/../dist/index.js", content, "utf-8");
+var distDir = __dirname + "/../dist/";
+
+var fs = require("fs");
+try { fs.mkdirSync(distDir); } catch (ignored) {}
+fs.writeFileSync(distDir + "index.js", content, "utf-8");
