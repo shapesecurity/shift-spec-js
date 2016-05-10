@@ -25,6 +25,12 @@ const {nodes, enums, namedTypes} = specConsumer(fs.readFileSync(require.resolve(
 
 const TYPE_INDICATOR_ENUM_NAME = 'TYPE_INDICATOR';
 
+function height(name) {
+  const type = nodes.get(name);
+  if (type.children.length === 0) return 0;
+  return 1 + Math.max(...type.children.map(height));
+}
+
 function nameType(type) {
   switch (type.kind) {
     case 'type':
@@ -121,9 +127,9 @@ for (let name of leafNames) {
 
 content += '\n';
 
-for (let name of innerNames) {
+for (let name of [...innerNames].sort((a, b) => height(a) - height(b))) {
   content += `
-  var ${name} = Union(${nodes.get(name).children.sort().map(x => `"${x}"`).join(', ')});`;
+  var ${name} = Union(${nodes.get(name).children.sort().join(', ')});`;
 }
 
 content += '\n';
