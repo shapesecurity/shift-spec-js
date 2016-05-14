@@ -4,17 +4,26 @@ JavaScript Shift AST Specification Representation
 
 ## About
 
-TODO
+This package provides a JavaScript representation of the [Shift spec](http://shift-ast.org/).
+
+It is primarily intended for use by other Shift tools.
 
 
 ## Usage
 
-TODO
+```js
+import Spec from "shift-spec";
+for (let typeName in Spec) {
+  let type = Spec[typeName];
+  let fields = type.fields.filter(f => f.name !== 'type');
+  console.log(typeName, fields);
+}
+```
 
 
 ## License
 
-    Copyright 2014 Shape Security, Inc.
+    Copyright 2016 Shape Security, Inc.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
