@@ -9,8 +9,9 @@
     "url": "https://github.com/shapesecurity/shift-spec-js.git"
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "node src/generate-spec.js",
+    "build": "node src/generate-spec.js && node src/generate-type-defs",
     "test": "node ./",
     "prepublish": "rm -rf dist/* && npm update && npm run build"
   },
