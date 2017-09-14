@@ -9,8 +9,9 @@
     "url": "https://github.com/shapesecurity/shift-spec-js.git"
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "node src/generate-spec.js",
+    "build": "node src/generate-spec.js && node src/generate-type-defs",
     "test": "node ./",
     "prepublish": "rm -rf dist/* && npm update && npm run build"
   },
@@ -27,7 +28,7 @@
     "implementation"
   ],
   "devDependencies": {
-    "shift-spec-consumer": "1.0.0",
+    "shift-spec-consumer": "1.0.1",
     "shift-spec-idl": "2016.0.x"
   },
   "bugs": {
