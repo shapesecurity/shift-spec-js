@@ -115,9 +115,8 @@ function printEnums(enums) {
 
 function printNamedTypes(namedTypes) {
   return Array.from(namedTypes).map(([name, type]) => {
-    if (name === 'string') return false; // TODO: Bug in shift-spec-consumer exporting "string" named type
     return `export ${printNamedType(name, type)}`;
-  }).filter(Boolean).join('\n\n');
+  }).join('\n\n');
 }
 
 function printNodes(nodes) {

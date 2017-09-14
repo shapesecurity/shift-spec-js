@@ -28,7 +28,7 @@
     "implementation"
   ],
   "devDependencies": {
-    "shift-spec-consumer": "1.0.0",
+    "shift-spec-consumer": "1.0.1",
     "shift-spec-idl": "2016.0.x"
   },
   "bugs": {
