@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-"use strict";
+'use strict';
 
-const distDir = __dirname + "/../dist/";
+const distDir = __dirname + '/../dist/';
 
 const fs = require('fs');
 
 const specConsumer = require('shift-spec-consumer');
-const {nodes, enums, namedTypes} = specConsumer(fs.readFileSync(require.resolve('shift-spec-idl/spec.idl'), 'utf8'), fs.readFileSync(require.resolve('shift-spec-idl/attribute-order.conf'), 'utf8'));
+const { nodes, enums, namedTypes } = specConsumer(fs.readFileSync(require.resolve('shift-spec-idl/spec.idl'), 'utf8'), fs.readFileSync(require.resolve('shift-spec-idl/attribute-order.conf'), 'utf8'));
 
 const TYPE_INDICATOR_ENUM_NAME = 'TYPE_INDICATOR';
 
@@ -138,9 +138,9 @@ for (let name of leafNames) {
   content += `
   ${name}.typeName = "${name}";
   ${name}.fields = [`;
-  const attrs = [{name: 'type', type: {kind: 'type', argument: name}}].concat(nodes.get(name).attributes);
+  const attrs = [{ name: 'type', type: { kind: 'type', argument: name } }].concat(nodes.get(name).attributes);
   content += attrs.map(attr => `\n    { name: "${attr.name}", type: ${nameType(attr.type)} }`).join(',');
-  content += `\n  ];\n`;
+  content += '\n  ];\n';
 }
 
 content += `
@@ -148,5 +148,7 @@ content += `
 }());
 `;
 
-try { fs.mkdirSync(distDir); } catch (ignored) {}
-fs.writeFileSync(distDir + "index.js", content, "utf-8");
+try {
+  fs.mkdirSync(distDir);
+} catch (ignored) {}
+fs.writeFileSync(distDir + 'index.js', content, 'utf-8');
