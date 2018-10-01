@@ -13,7 +13,7 @@
     "build": "node src/generate-spec.js",
     "lint": "eslint src",
     "test": "node ./",
-    "prepublish": "rm -rf dist/* && npm update && npm run build"
+    "prepare": "rm -rf dist/* && npm run build"
   },
   "files": [
     "dist"
