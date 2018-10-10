@@ -30,7 +30,7 @@
   "devDependencies": {
     "eslint": "^5.6.1",
     "shift-spec-consumer": "1.0.0",
-    "shift-spec-idl": "2016.0.x"
+    "shift-spec-idl": "2017.0.0"
   },
   "bugs": {
     "url": "https://github.com/shapesecurity/shift-spec-js/issues"
